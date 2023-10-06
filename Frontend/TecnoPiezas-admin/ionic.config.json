@@ -1,0 +1,7 @@
+{
+  "name": "TecnoPiezas-admin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
