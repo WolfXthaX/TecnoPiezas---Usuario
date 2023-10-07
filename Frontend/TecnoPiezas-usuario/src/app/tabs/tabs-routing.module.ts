@@ -13,7 +13,7 @@ const routes: Routes = [
       },
       {
         path: 'tab2', // Nombre de la ruta para la lista de productos
-        loadChildren: () => import('../ver-productos/ver-productos.module').then(m => m.VerProductosPageModule)
+        loadChildren: () => import('../Productos/ver-productos/ver-productos.module').then(m => m.VerProductosPageModule)
       },
       {
         path: 'tab3',
