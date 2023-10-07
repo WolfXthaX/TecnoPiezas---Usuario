@@ -10,6 +10,8 @@ import { Producto } from '../../model/ClProducto';
 export class VerProductosPage implements OnInit {
 
   productos: Producto[] = [];
+
+  productosFiltrados: any[] = [];
   
   constructor(private productosService: ProductosService) {}
 
@@ -25,4 +27,7 @@ export class VerProductosPage implements OnInit {
       });
   }
 
+  aplicarFiltros(productosFiltrados: any[]): void {
+    this.productosFiltrados = productosFiltrados;
+  }
 }
