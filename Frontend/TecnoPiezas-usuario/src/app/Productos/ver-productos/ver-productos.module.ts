@@ -8,6 +8,8 @@ import { VerProductosPageRoutingModule } from './ver-productos-routing.module';
 
 import { VerProductosPage } from './ver-productos.page';
 
+import { FiltroProductosComponent } from '../filtro-productos/filtro-productos.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { VerProductosPage } from './ver-productos.page';
     IonicModule,
     VerProductosPageRoutingModule
   ],
-  declarations: [VerProductosPage]
+  declarations: [VerProductosPage, FiltroProductosComponent]
 })
 export class VerProductosPageModule {}
