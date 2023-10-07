@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: 'ver-productos',
-    loadChildren: () => import('./ver-productos/ver-productos.module').then( m => m.VerProductosPageModule)
+    loadChildren: () => import('./Productos/ver-productos/ver-productos.module').then( m => m.VerProductosPageModule)
   },
 ];
 @NgModule({

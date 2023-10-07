@@ -14,4 +14,14 @@ export class ProductosService {
     return this.http.get<any>(`${this.apiUrl}/productos/`);
   }
 
+  aplicarFiltros(): void {
+    // Implementa la lógica para aplicar los filtros y actualizar la lista de productos
+    // Llama al servicio para obtener productos filtrados
+    this.productosService.obtenerProductosFiltrados(this.busqueda, this.categoria, this.subcategoria)
+      .subscribe((productos) => {
+        // Actualiza la lista de productos en la vista principal
+        // Puedes emitir un evento para que el componente principal actualice la lista
+      });
+  }
+
 }
