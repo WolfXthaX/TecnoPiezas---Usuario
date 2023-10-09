@@ -2,13 +2,16 @@ import json
 from typing import Any
 from django.http import JsonResponse
 from django.views import View
-from .models import Producto, Categoria, Subcategoria
+from .models import *
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
+
+from django.views.decorators.http import require_http_methods
+from django.shortcuts import get_object_or_404
 
 from .serializers import ProductoSerializer, CategoriaSerializer, SubcategoriaSerializer
 
@@ -49,3 +52,13 @@ class ListaProductosFiltrados(APIView):
         serializer = ProductoSerializer(productos, many=True, context={'request': request})
         
         return Response({'productos': serializer.data})
+
+# el VistaProductoDAE procesa los metodos GET, PUT y DELETE, osea que esta vista se encargara de recuperar,
+# actualizar o eliminar algun producto.
+# Las operaciones se implementan junto al "RetrieveUpdateDestroyAPIView" o DRF, asi nos ahorramos tiempo en el CRUD
+# Creador - Bayron A.
+
+class VistaProductoDAE(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+    lookup_field = 'producto_id'

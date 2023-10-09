@@ -32,7 +32,16 @@ ALLOWED_HOSTS = []
 CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8100",  # Agrega tu dominio de Angular aquí
+    "http://localhost:8100",  # Nuestro dominio de angular
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
 ]
 
 MEDIA_URL = '/media/'
